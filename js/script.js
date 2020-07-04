@@ -7,26 +7,64 @@ lightbox.option({
 const search = document.getElementById("photo-search").addEventListener("keyup", myFunction);
 function myFunction() {
 
+const captionArray = [];
+
   // Get all links in the document
   let captions = document.body.getElementsByTagName("a");
   // Get all the captions in the document
   let captionCount = document.querySelectorAll("a[data-title]");
-  let counter = 0;
-  while ( counter < captionCount.length ) {
+  for (i=0; i < captionCount.length; i++) {
   // Get each caption, make it lowercase, and log it to console
-  let allCaptions = captions[counter].getAttribute("data-title");
-  totalCaptions = allCaptions.toLowerCase();
-  console.log(totalCaptions);
-  counter ++;
-  }
-  // Get search value, set as x, set lowercase, and log to console
+  let allCaptions = captions[i].getAttribute("data-title");
+  let totalCaptions = allCaptions.toLowerCase();
+  captionArray.push(totalCaptions);
+  console.log(captionArray);
   let x = document.getElementById("photo-search");
   x = x.value.toLowerCase();
-  console.log(x);
-  console.log(totalCaptions.includes(x));
+  if (totalCaptions.indexOf(x) > -1) {
+    captionCount[i].style.display = "block";
+  } else {
+    captionCount[i].style.display = "none";
+  }
+  }
 }
 
+// ignore everything below here
+// it is all my experimenting
 
+  /*
+  let y = (captionArray.filter(element => element.includes(x)));
+  console.log(y);
+  if (totalCaptions.indexOf(x) > -1) {
+    allCaptions[i].style.display = "block";
+  } else {
+    allCaption[i].style.display = "none";
+  }
+  }
+}
+/*
+// Get search value, set as x, set lowercase, and log to console
+  let x = document.getElementById("photo-search");
+  x = x.value.toLowerCase();
+  let y = (captionArray.filter(element => element.includes(x)));
+  console.log(y);
+  function display(){
+  const images = document.getElementsbyTagName("img") = "none";
+}
+}*/
+
+/*
+const images = list.getElementsByTagName('a');
+Array.from(images).forEach(function(image){
+  const title = image.getAttribute('data-title');
+  if(title.toLowerCase().indexOf(x) != -1){
+    image.style.display = 'block';
+  } else {
+    image.style.display = 'none';
+    }
+});
+};
+*/
 
 // Get the data-title attribute of the first one
 //var caption0 = captions[0].getAttribute("data-title");
