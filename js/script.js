@@ -4,23 +4,29 @@ lightbox.option({
   'wrapAround': true
 });
 
-/*const search = document.getElementById("photo-search").addEventListener("keyup", myFunction);
-//const caption = document.querySelectorAll
+const search = document.getElementById("photo-search").addEventListener("keyup", myFunction);
 function myFunction() {
+
+  // Get all links in the document
+  let captions = document.body.getElementsByTagName("a");
+  // Get all the captions in the document
+  let captionCount = document.querySelectorAll("a[data-title]");
+  let counter = 0;
+  while ( counter < captionCount.length ) {
+  // Get each caption, make it lowercase, and log it to console
+  let allCaptions = captions[counter].getAttribute("data-title");
+  totalCaptions = allCaptions.toLowerCase();
+  console.log(totalCaptions);
+  counter ++;
+  }
   let x = document.getElementById("photo-search");
   x = x.value.toLowerCase();
-}*/
-
-// Get all links in the document
-let captions = document.body.getElementsByTagName("a");
-// Get all the captions in the document
-let counter = 0
-while ( counter < 12 ) {
-let totalCaptions = captions[counter].getAttribute("data-title");
-totalCaptions = totalCaptions.toLowerCase();
-console.log(totalCaptions);
-counter ++;
+  console.log(x);
+  console.log(totalCaptions.includes(x));
 }
+
+
+
 // Get the data-title attribute of the first one
 //var caption0 = captions[0].getAttribute("data-title");
 // Get the src attribute of the second simply by reading the property
