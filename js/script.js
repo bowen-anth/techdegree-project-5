@@ -1,8 +1,12 @@
 // jshint esversion: 6
 
+//lightbox jquery plugin
+
 lightbox.option({
   'wrapAround': true
 });
+
+//my js code from here to line 34
 
 const search = document.getElementById("photo-search").addEventListener("keyup", myFunction);
 function myFunction() {
@@ -17,10 +21,13 @@ const captionArray = [];
   // Get each caption, make it lowercase, and log it to console
   let allCaptions = captions[i].getAttribute("data-title");
   let totalCaptions = allCaptions.toLowerCase();
+  //add each caption to captionArray
   captionArray.push(totalCaptions);
   console.log(captionArray);
+  //search term is x
   let x = document.getElementById("photo-search");
   x = x.value.toLowerCase();
+  //show the image(s) if any of the search term is in the caption
   if (totalCaptions.indexOf(x) > -1) {
     captionCount[i].style.display = "block";
   } else {
