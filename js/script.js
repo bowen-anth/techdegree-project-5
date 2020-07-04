@@ -6,7 +6,7 @@ lightbox.option({
   'wrapAround': true
 });
 
-//my js code from here to line 34
+//my js code from here to line 37
 
 const search = document.getElementById("photo-search").addEventListener("keyup", myFunction);
 function myFunction() {
