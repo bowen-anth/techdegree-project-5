@@ -1,22 +1,75 @@
+// jshint esversion: 6
+
 lightbox.option({
   'wrapAround': true
 });
 
-const list = document.querySelector('div');
+/*const search = document.getElementById("photo-search").addEventListener("keyup", myFunction);
+//const caption = document.querySelectorAll
+function myFunction() {
+  let x = document.getElementById("photo-search");
+  x = x.value.toLowerCase();
+}*/
+
+// Get all links in the document
+let captions = document.body.getElementsByTagName("a");
+// Get all the captions in the document
+let counter = 0
+while ( counter < 12 ) {
+let totalCaptions = captions[counter].getAttribute("data-title");
+totalCaptions = totalCaptions.toLowerCase();
+console.log(totalCaptions);
+counter ++;
+}
+// Get the data-title attribute of the first one
+//var caption0 = captions[0].getAttribute("data-title");
+// Get the src attribute of the second simply by reading the property
+//var caption1 = captions[1].getAttribute("data-title");
+//console.log(caption1);
+
+/*function myFunction2() {
+  var y = document.querySelectorAll("data-title")[0].getAttribute("class");
+  console.log(y);
+}*/
+
+//let caption = document.getElementsByName("data-title");
+//console.log(caption);
+//for (let i = 0; i < ; i ++)
+
+
+//function myFunction2() {
+//  var y = document.getAttribute("data-title");
+//  document.getAttribute("data-title");
+//  console.log(y);
+//}
+
+
+//function myFunction2() {
+//  let y = getAttribute.getElementsByName('data-set')[0];
+//  console.log(y);
+//}
+//  const title = getAttribute('data-title');
+//  for (let i=0; i < title.length; i++); {
+//    console.log(title);
+//    while (arr1.indexOf(arr2[i])) > -1) {
+//      arr1.splice(arr1.indexOf(arr2[i]), 1);
+//}
+
+//working one
+/* const list = document.querySelector('div');
 const searchField = document.querySelector('#photo-search');
 searchField.addEventListener('keyup', function(eventObject){
   const term = eventObject.target.value.toLowerCase();
   const images = list.getElementsByTagName('a');
   Array.from(images).forEach(function(image){
-    //I think the title const is messing it up?
-    const title = image.firstElementChild.textContent;
+    const title = image.getAttribute('data-title');
     if(title.toLowerCase().indexOf(term) != -1){
       image.style.display = 'block';
     } else {
       image.style.display = 'none';
       }
   });
-});
+}); */
 
 /* function mySearchFunction() {
   var input, filter, a, item, i, txtValue;
