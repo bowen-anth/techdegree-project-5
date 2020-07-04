@@ -19,6 +19,7 @@ function myFunction() {
   console.log(totalCaptions);
   counter ++;
   }
+  // Get search value, set as x, set lowercase, and log to console
   let x = document.getElementById("photo-search");
   x = x.value.toLowerCase();
   console.log(x);
